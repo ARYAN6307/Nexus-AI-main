@@ -17,11 +17,7 @@ import { Loader } from "@/components/loader";
 import { Empty } from "@/components/ui/empty";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { Vortex } from "@/components/ui/vortex";
-export const formSchema=z.object({
-    prompt:z.string().min(1,{
-        message:"Prompt is required",
-    }),
-});
+import { formSchema } from "./constants";
 
 
 const VideoPage = () => {

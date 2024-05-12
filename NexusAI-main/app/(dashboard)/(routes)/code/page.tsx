@@ -18,13 +18,10 @@ import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
 import ReactMarkdown from "react-markdown";
 import { Vortex } from "@/components/ui/vortex";
+import { formSchema } from "./constants";
 import * as z from "zod";
 
-export const formSchema = z.object({
-    prompt: z.string().min(1, {
-        message: "Prompt is required",
-    })
-})
+
 
 const CodePage = () => {
   const router = useRouter();

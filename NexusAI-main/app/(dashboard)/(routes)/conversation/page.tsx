@@ -20,11 +20,7 @@ import ReactMarkdown from "react-markdown";
 import { Vortex } from "@/components/ui/vortex";
 import * as z from "zod";
 
-export const formSchema = z.object({
-    prompt: z.string().min(1, {
-        message: "Prompt is required",
-    })
-})
+import { formSchema } from "./constants";
 
 const ConversationPage = () => {
   const router = useRouter();
