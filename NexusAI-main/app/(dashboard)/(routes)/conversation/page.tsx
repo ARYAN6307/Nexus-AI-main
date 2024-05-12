@@ -4,10 +4,8 @@ import {Heading} from "@/components/heading";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { formSchema } from "./constants";
 
 import axios from "axios";
-import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MessageSquare } from "lucide-react";
@@ -21,6 +19,13 @@ import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
 import ReactMarkdown from "react-markdown";
 import { Vortex } from "@/components/ui/vortex";
+import * as z from "zod";
+
+export const formSchema = z.object({
+    prompt: z.string().min(1, {
+        message: "Prompt is required",
+    })
+})
 
 const ConversationPage = () => {
   const router = useRouter();
