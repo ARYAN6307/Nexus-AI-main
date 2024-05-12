@@ -4,7 +4,6 @@ import axios from "axios";
 import { Heading } from "@/components/heading";
 import { MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { formSchema } from "./app/(dashboard)/(routes)/conversation/constants";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -17,6 +16,13 @@ import { Loader } from "@/components/loader";
 import { BotAvatar } from "@/components/bot-avatar";
 import { UserAvatar } from "@/components/user-avatar";
 import { cn } from "@/lib/utils";
+
+export const formSchema = z.object({
+    prompt: z.string().min(1, {
+        message: "Prompt is required",
+    })
+})
+
 
 interface ChatCompletionRequestMessage {
     role: 'user' | 'assistant' | 'system';
