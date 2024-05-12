@@ -1,6 +1,4 @@
 "use client";
-
-import * as z from "zod";
 import axios from "axios";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,8 +15,14 @@ import { Loader } from "@/components/loader";
 import { Empty } from "@/components/ui/empty";
 import { useProModal } from "@/hooks/use-pro-modal";
 
-import { formSchema } from "./constants";
 import { Vortex } from "@/components/ui/vortex";
+import * as z from "zod"; 
+export const formSchema=z.object({
+    prompt:z.string().min(1,{
+        message:"Prompt is required",
+    }),
+});
+
 
 const MusicPage = () => {
   const proModal = useProModal();
