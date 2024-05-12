@@ -4,7 +4,7 @@ import axios from "axios";
 import { Heading } from "@/components/heading";
 import { MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { formSchema } from "./constants";
+import { formSchema } from "./app/(dashboard)/(routes)/conversation/constants";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
